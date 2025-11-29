@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="hero-inner">
         <div className="hero-left">
           <p className="hero-tag">Music Event • Workshop • Tech Fest</p>
-          <h1 className="hero-title">Event Events</h1>
+          <h1 className="hero-title">Event Ease</h1>
           <p className="hero-subtitle">
             Stay updated with the latest academic talks, workshops and
             college events across Eventversities. Whether you are looking for

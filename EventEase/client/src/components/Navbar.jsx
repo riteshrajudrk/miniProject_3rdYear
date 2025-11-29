@@ -24,6 +24,11 @@ const Navbar = () => {
           <NavLink to="/about" className="navbar-link" onClick={closeMenu}>About</NavLink>
           <NavLink to="/blog" className="navbar-link" onClick={closeMenu}>Blog</NavLink>
           <NavLink to="/contact" className="navbar-link" onClick={closeMenu}>Contact</NavLink>
+          <div className="navbar-actions">
+  <NavLink to="/create-event">
+    <button className="navbar-organize-btn">Organize Event</button>
+  </NavLink>
+  </div>
 
           {/* ✅ Only one login button placed here */}
           <NavLink to="/login" onClick={closeMenu}>

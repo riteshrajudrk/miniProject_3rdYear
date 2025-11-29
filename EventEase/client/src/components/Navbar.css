@@ -1,5 +1,21 @@
 /* src/components/Navbar.css */
 
+.navbar-organize-btn {
+  background: #ffffff;
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-magenta);
+  cursor: pointer;
+  margin-right: 0.6rem;
+}
+
+.navbar-organize-btn:hover {
+  opacity: 0.9;
+}
+
 .navbar {
   padding: 1.25rem 1.5rem 0.75rem;
   position: relative;
