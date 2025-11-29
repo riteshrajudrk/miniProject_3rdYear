@@ -1,0 +1,23 @@
+/* uses same .page-hero, .auth-wrapper, .auth-card styles as Login */
+@import "./Login.css";
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.auth-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+.auth-checkbox input {
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,129 @@
+.event-detail-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-detail-hero {
+  background: var(--primary-bg-gradient);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding-bottom: 2.5rem;
+  color: #ffffff;
+}
+
+.event-detail-header {
+  max-width: 1100px;
+  margin: 2.2rem auto 0;
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.event-detail-cover {
+  background: #111827;
+  border-radius: 24px;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.event-detail-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  background: #facc15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #111827;
+  font-size: 1.2rem;
+}
+
+.event-detail-info h1 {
+  font-size: 1.5rem;
+}
+
+.event-detail-info p {
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.event-detail-meta {
+  opacity: 0.85;
+}
+
+/* right side */
+.event-detail-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.event-detail-price-tag {
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  background: #22c55e;
+  font-size: 0.8rem;
+}
+
+.event-detail-btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  background: #ec4899;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* main */
+.event-detail-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.event-detail-section + .event-detail-section {
+  margin-top: 2rem;
+}
+
+.event-detail-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.event-detail-section p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+/* popular */
+.event-detail-popular-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.event-detail-popular-card {
+  height: 150px;
+  border-radius: 18px;
+  background: #e5e7eb;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .event-detail-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .event-detail-popular-grid {
+    grid-template-columns: 1fr;
+  }
+}

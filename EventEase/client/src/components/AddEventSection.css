@@ -1,0 +1,65 @@
+/* src/components/AddEventSection.css */
+
+.add-event {
+  margin-top: 3rem;
+}
+
+.add-event-inner {
+  border-radius: 24px;
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+  padding: 1.8rem 2rem;
+  display: grid;
+  grid-template-columns: auto 1.2fr;
+  gap: 2rem;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* mini illustration */
+.add-event-illustration {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.add-event-avatar {
+  width: 70px;
+  height: 90px;
+  border-radius: 18px;
+  background: #111827;
+}
+
+.add-event-avatar--right {
+  background: #1d4ed8;
+}
+
+.add-event-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.add-event-content p {
+  font-size: 0.9rem;
+  max-width: 420px;
+}
+
+.add-event-btn {
+  margin-top: 0.9rem;
+  border-radius: 999px;
+  border: none;
+  padding: 0.55rem 1.4rem;
+  background: #ffffff;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+  .add-event-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .add-event-illustration {
+    order: 2;
+  }
+}

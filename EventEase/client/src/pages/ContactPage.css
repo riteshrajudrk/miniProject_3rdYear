@@ -1,0 +1,120 @@
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-hero {
+  background: var(--primary-bg-gradient);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding-bottom: 3rem;
+  color: #ffffff;
+}
+
+.contact-header {
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.contact-header h1 {
+  font-size: 2rem;
+}
+
+.contact-header p {
+  margin-top: 0.3rem;
+}
+
+/* layout */
+.contact-layout {
+  max-width: 1000px;
+  margin: 1.8rem auto 0;
+  padding: 0 1.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 1.8rem;
+}
+
+/* left card */
+.contact-info-card {
+  background: #111827;
+  border-radius: 24px;
+  padding: 1.6rem 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-info-card h3 {
+  margin-bottom: 0.4rem;
+}
+
+.contact-info-card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+/* form */
+.contact-form {
+  background: #f9fafb;
+  border-radius: 24px;
+  padding: 1.6rem 1.7rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+  color: #111827;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+}
+
+.contact-field label {
+  font-size: 0.78rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-muted);
+}
+
+.contact-field input,
+.contact-field textarea {
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.contact-field textarea {
+  border-radius: 18px;
+  resize: vertical;
+}
+
+.contact-submit {
+  margin-top: 0.3rem;
+  border-radius: 999px;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  background: #ec4899;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
