@@ -12,6 +12,8 @@ import ProfilePage from "./pages/ProfilePage";
 import ErrorPage from "./pages/ErrorPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import About from "./pages/About";
+import CreateEvent from "./pages/CreateEvent";
+import OrganizerDashboard from "./pages/OrganizerDashboard";
 
 const App = () => {
   return (
