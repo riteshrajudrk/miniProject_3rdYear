@@ -20,9 +20,9 @@ const SearchBar = () => {
             </select>
           </div>
           <div className="searchbar-field">
-            <span className="field-label">Eventversity</span>
+            <span className="field-label">university</span>
             <select>
-              <option>Select Eventversity</option>
+              <option>Select university</option>
               <option>ABES</option>
               <option>AKTU</option>
             </select>

@@ -27,6 +27,9 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/create-event" element={<CreateEvent />} />
+<Route path="/organizer-dashboard" element={<OrganizerDashboard />} />
+
         <Route path="/error" element={<ErrorPage />} />
         {/* 404 */}
         <Route path="*" element={<NotFoundPage />} />

@@ -66,14 +66,14 @@ const About = () => {
             </div>
 
             <div className="team-card">
-              <div className="team-avatar">T2</div>
-              <h3>[Teammate 2]</h3>
+              <div className="team-avatar">R</div>
+              <h3>Riya Agrahari</h3>
               <p>UI/UX & Database Manager</p>
             </div>
 
             <div className="team-card">
-              <div className="team-avatar">T3</div>
-              <h3>[Teammate 3]</h3>
+              <div className="team-avatar">R</div>
+              <h3>Rimjhim Saxena</h3>
               <p>Backend Logic & API Testing</p>
             </div>
           </div>
