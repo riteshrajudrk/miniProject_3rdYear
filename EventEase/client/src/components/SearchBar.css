@@ -1,87 +1,128 @@
-/* src/components/SearchBar.css */
-
-.searchbar {
-  margin-top: 1.8rem;
-  padding: 0 1.5rem;
-}
-
-.searchbar-inner {
-  max-width: 980px;
-  margin: 0 auto;
-  background: var(--search-bg);
-  border-radius: 999px;
-  padding: 0.45rem 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.3);
-}
-
-/* top small search input */
-.searchbar-input--search input {
+/* WRAPPER */
+.searchbar-wrapper {
   width: 100%;
-  border-radius: 999px;
-  border: none;
-  padding: 0.4rem 1rem;
-  font-size: 0.87rem;
-  outline: none;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
 }
 
-/* bottom filter row */
-.searchbar-filters {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+/* MAIN PILL BOX */
+.searchbar-pill {
+  background: white;
+  padding: 18px 25px;
+  border-radius: 45px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 20px;
+
+  width: 90%;
+  max-width: 980px;
 }
 
-.searchbar-field {
+/* FILTERS ROW → horizontal */
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;   /* ⭐ Align all filters from top */
+  gap: 25px;
+}
+
+/* EACH FILTER BLOCK — label on top, box below */
+.filter-item {
   display: flex;
   flex-direction: column;
-  padding: 0.4rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
+  justify-content: flex-start;
+  width: 200px;              /* ⭐ Equal width for perfect alignment */
 }
 
-.field-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.1rem;
-}
-
-.searchbar-field select {
-  border: none;
-  background: transparent;
-  font-size: 0.85rem;
-  outline: none;
-}
-
-/* button */
-.searchbar-submit {
-  border-radius: 999px;
-  border: none;
-  padding: 0.6rem 1rem;
-  background: var(--primary-blue);
-  color: #ffffff;
+/* LABEL */
+.filter-item label {
+  font-size: 13px;
   font-weight: 600;
+  margin-left :20px;
+  margin-bottom: 6px;
+  color: #666;
+}
+
+/* INPUT + SELECT — SAME height */
+.search-input,
+.filter-item select {
+  width: 100%;
+  height: 45px;
+  padding: 0 16px;
+
+  background: #f3f3f3;
+  border: 1px solid #dcdcdc;
+  border-radius: 35px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.25s;
+}
+
+/* HOVER + FOCUS EFFECT */
+.search-input:hover,
+.filter-item select:hover {
+  background: #e8e8e8;
+}
+
+.search-input:focus,
+.filter-item select:focus {
+  background: #ffffff;
+  border-color: #5c7cff;
+  box-shadow: 0 0 0 3px rgba(90, 122, 255, 0.35);
+}
+
+/* SEARCH BUTTON */
+.search-btn {
+  padding: 12px 28px;
+  background: #4a62ff;
+  color: white;
+  border: none;
+  border-radius: 35px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.25s ease;
+  margin-top:25px;
 }
 
-/* responsive */
-@media (max-width: 900px) {
-  .searchbar-inner {
-    border-radius: 24px;
-  }
-
-  .searchbar-filters {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.search-btn:hover {
+  background: #3549e0;
+  transform: translateY(-2px);
 }
 
-@media (max-width: 600px) {
-  .searchbar-filters {
-    grid-template-columns: 1fr;
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .searchbar-pill {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    /* width :100%; */
+  }
+
+  .filters {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .filter-item {
+    width: 100%;
+  }
+ 
+
+  .search-input,
+  .filter-item select,
+  .search-btn {
+    width: 100%;
   }
 }

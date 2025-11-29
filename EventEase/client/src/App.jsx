@@ -14,28 +14,33 @@ import NotFoundPage from "./pages/NotFoundPage";
 import About from "./pages/About";
 import CreateEvent from "./pages/CreateEvent";
 import OrganizerDashboard from "./pages/OrganizerDashboard";
-
+import AllEvents from "./pages/AllEvents";
+import SearchResult from "./pages/SearchResult";
+import { AppProvider } from "./context/useAppContext";
 const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* simple events listing can be same as home */}
-        <Route path="/events" element={<Home />} />
-        <Route path="/events/:id" element={<EventDetail />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/create-event" element={<CreateEvent />} />
-        <Route path="/organizer-dashboard" element={<OrganizerDashboard />} />
+      <AppProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* simple events listing can be same as home */}
+          <Route path="/events" element={<AllEvents />} />
+          <Route path="/events/:id" element={<EventDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/create-event" element={<CreateEvent />} />
+          <Route path="/search-results" element={<SearchResult />} />
+          <Route path="/organizer-dashboard" element={<OrganizerDashboard />} />
 
-        <Route path="/error" element={<ErrorPage />} />
-        {/* 404 */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+          <Route path="/error" element={<ErrorPage />} />
+          {/* 404 */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </AppProvider>
     </Router>
   );
 };

@@ -1,29 +1,46 @@
-import React from "react";
+import React, { use } from "react";
 import "./EventDetail.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import EventsSection from "../components/EventsSection";
+import { useParams } from "react-router-dom";
+import { useAppContext } from "../context/useAppContext";
+import { useState, useEffect } from "react";
 const EventDetail = () => {
+  const id = useParams().id;
+  const { mockEvents } = useAppContext();
+  const [event, setEvent] = useState(null);
+
+  useEffect(() => {
+    // Fetch event details using the id if needed
+    for (let event of mockEvents) {
+      if (event.id === Number(id)) {
+        setEvent(event);
+      }
+    }
+  }, []);
   return (
     <div className="event-detail-page">
       <div className="page-hero event-detail-hero">
         <Navbar />
         <div className="event-detail-header">
           <div className="event-detail-cover">
-            <div className="event-detail-logo">EX</div>
+            <div className="event-detail-logo">
+              <img src={event?.image} alt={event?.title} />
+            </div>
             <div className="event-detail-info">
-              <h1>EXMO 2025 – Tech Unleashed</h1>
-              <p>
-                The largest technological exhibition in Sri Lanka.
-              </p>
+              <h1>{event?.title}</h1>
+              <p>{event?.description}</p>
               <p className="event-detail-meta">
-                Eventversity of Moratuwa • 28 Oct 2025 • Colombo
+                {event?.date} • {event?.location} • {event?.time}
               </p>
             </div>
           </div>
 
           <div className="event-detail-side">
-            <div className="event-detail-price-tag">FREE</div>
+            <div className="event-detail-price-tag">
+              {event?.price > 0 ? `₹${event.price}` : "FREE"}
+            </div>
             <button className="event-detail-btn">Register Now</button>
           </div>
         </div>
@@ -32,12 +49,8 @@ const EventDetail = () => {
       <main className="event-detail-main">
         <section className="event-detail-section">
           <h2>More Details</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            quis nisi ac mi pharetra facilisis. Cras cursus vehicula
-            ullamcorper. Pellentesque sit amet nulla tempus, bibendum justo
-            eget, blandit odio. 
-          </p>
+          <p>{event?.description}</p>
+
           <p>
             Nulla facilisi. Curabitur id ultricies velit. Suspendisse a orci
             orci. Integer scelerisque, arcu eget malesuada semper, lectus nibh
@@ -47,11 +60,8 @@ const EventDetail = () => {
 
         <section className="event-detail-section">
           <h2>Popular Events</h2>
-          <div className="event-detail-popular-grid">
-            <div className="event-detail-popular-card" />
-            <div className="event-detail-popular-card" />
-            <div className="event-detail-popular-card" />
-          </div>
+
+          <EventsSection />
         </section>
       </main>
 

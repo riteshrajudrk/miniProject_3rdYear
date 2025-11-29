@@ -1,29 +1,10 @@
 // src/components/ReviewsSection.jsx
 import React from "react";
 import "./ReviewsSection.css";
-
-const reviews = [
-  {
-    id: 1,
-    name: "Taylor Swift",
-    role: "Student, CSE",
-    text: "Great way to discover events and never miss the important ones in campus.",
-  },
-  {
-    id: 2,
-    name: "Taylor Swift",
-    role: "Club Coordinator",
-    text: "Managing registrations became so simple. All data is in one place.",
-  },
-  {
-    id: 3,
-    name: "Taylor Swift",
-    role: "Student, ECE",
-    text: "Clean UI and easy event search. I love the reminders!",
-  },
-];
+import { useAppContext } from "../context/useAppContext";
 
 const ReviewsSection = () => {
+  const { reviews } = useAppContext();
   return (
     <section className="reviews">
       <h2 className="reviews-title">Reviews About Us</h2>
