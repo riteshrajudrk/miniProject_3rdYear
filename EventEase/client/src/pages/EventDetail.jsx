@@ -34,6 +34,7 @@ const EventDetail = () => {
               <p className="event-detail-meta">
                 {event?.date} {event?.month} • {event?.location} • {event?.time}
               </p>
+              <p className="event-detail-meta">Type : {event?.eventType}</p>
             </div>
           </div>
 

@@ -16,23 +16,20 @@ const SearchBar = () => {
   // Extract dynamic values
   const months = [...new Set(mockEvents.map((e) => e.month))];
   const types = [...new Set(mockEvents.map((e) => e.eventType))];
-
   const handleSearch = () => {
-    // ⭐ FIRST: Try to match TITLE exactly (case-insensitive)
+    // ⭐ PARTIAL TITLE MATCH (case-insensitive)
     if (filters.title.trim()) {
-      const match = mockEvents.find(
-        (e) =>
-          e.title.toLowerCase().trim() === filters.title.toLowerCase().trim()
+      const match = mockEvents.find((e) =>
+        e.title.toLowerCase().includes(filters.title.toLowerCase().trim())
       );
 
       if (match) {
-        // ⭐ Found exact event → Go directly to detail page
         navigate(`/events/${match.id}`);
         return;
       }
     }
 
-    // ⭐ Otherwise → Navigate to results page with filters
+    // ⭐ Otherwise → Go to search results with filters
     const q = new URLSearchParams(filters).toString();
     navigate(`/search-results?${q}`);
   };
@@ -40,9 +37,7 @@ const SearchBar = () => {
   return (
     <section className="searchbar-wrapper">
       <div className="searchbar-pill">
-
         <div className="filters">
-
           {/* ⭐ TITLE SEARCH */}
           <div className="filter-item">
             <label>EVENT NAME</label>
@@ -78,9 +73,7 @@ const SearchBar = () => {
             <label>EVENT TYPE</label>
             <select
               value={filters.type}
-              onChange={(e) =>
-                setFilters({ ...filters, type: e.target.value })
-              }
+              onChange={(e) => setFilters({ ...filters, type: e.target.value })}
             >
               <option value="">Select Type</option>
               {types.map((t, i) => (

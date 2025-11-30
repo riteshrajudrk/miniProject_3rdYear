@@ -1,9 +1,9 @@
 import React from "react";
-import "./PrivacyPolicy.css";
+import "./Privacy.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const PrivacyPolicy = () => {
+const Privacy = () => {
   return (
     <div className="privacy-page">
       <div className="page-hero privacy-hero">
@@ -53,4 +53,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default Privacy;
