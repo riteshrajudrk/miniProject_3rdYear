@@ -1,7 +1,7 @@
 // src/components/AddEventSection.jsx
 import React from "react";
 import "./AddEventSection.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const AddEventSection = () => {
   return (
@@ -19,7 +19,9 @@ const AddEventSection = () => {
             Promote your college fest, workshop or cultural night to all
             students in just a few clicks.
           </p>
-          <button to="/create-event" className="add-event-btn">Organize Events</button>
+          <NavLink to="/create-event">
+            <button  className="add-event-btn">Organize Events</button>
+          </NavLink>
         </div>
       </div>
     </section>
