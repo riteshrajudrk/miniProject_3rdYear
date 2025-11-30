@@ -15,7 +15,6 @@ import About from "./pages/About";
 import CreateEvent from "./pages/CreateEvent";
 import OrganizerDashboard from "./pages/OrganizerDashboard";
 import AllEvents from "./pages/AllEvents";
-import SearchResult from "./pages/SearchResult";
 import { AppProvider } from "./context/useAppContext";
 const App = () => {
   return (
@@ -33,7 +32,6 @@ const App = () => {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/create-event" element={<CreateEvent />} />
-          <Route path="/search-results" element={<SearchResult />} />
           <Route path="/organizer-dashboard" element={<OrganizerDashboard />} />
 
           <Route path="/error" element={<ErrorPage />} />

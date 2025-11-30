@@ -32,7 +32,7 @@ const EventDetail = () => {
               <h1>{event?.title}</h1>
               <p>{event?.description}</p>
               <p className="event-detail-meta">
-                {event?.date} • {event?.location} • {event?.time}
+                {event?.date} {event?.month} • {event?.location} • {event?.time}
               </p>
             </div>
           </div>
@@ -51,11 +51,9 @@ const EventDetail = () => {
           <h2>More Details</h2>
           <p>{event?.description}</p>
 
-          <p>
-            Nulla facilisi. Curabitur id ultricies velit. Suspendisse a orci
-            orci. Integer scelerisque, arcu eget malesuada semper, lectus nibh
-            porta felis, ac finibus urna magna non lorem.
-          </p>
+          <p>{event?.longDescription}</p>
+          <p>{event?.organizer}</p>
+          <p>{event?.process}</p>
         </section>
 
         <section className="event-detail-section">
