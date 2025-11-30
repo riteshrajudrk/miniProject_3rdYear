@@ -42,7 +42,7 @@
   max-width: 420px;
 }
 
-.add-event-btn {
+.add-event-btn , Link {
   margin-top: 0.9rem;
   border-radius: 999px;
   border: none;

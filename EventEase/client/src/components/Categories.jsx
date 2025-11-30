@@ -1,19 +1,14 @@
 // src/components/Categories.jsx
 import React from "react";
 import "./Categories.css";
-
-const data = [
-  { icon: "🎵", label: "Music Events" },
-  { icon: "🎤", label: "Conferences" },
-  { icon: "🎉", label: "Annual Celebrations" },
-  { icon: "🎮", label: "Games" },
-];
+import { useAppContext } from "../context/useAppContext";
 
 const Categories = () => {
+  const { IconData } = useAppContext();
   return (
     <section className="categories">
       <div className="categories-inner">
-        {data.map((item) => (
+        {IconData.map((item) => (
           <button className="category-pill" key={item.label}>
             <span className="category-icon">{item.icon}</span>
             <span className="category-label">{item.label}</span>
