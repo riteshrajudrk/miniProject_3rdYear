@@ -1,6 +1,8 @@
 // src/components/Footer.jsx
 import React from "react";
 import "./Footer.css";
+import { FaFacebook, FaGithub } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
 
 const Footer = () => {
   return (
@@ -15,9 +17,9 @@ const Footer = () => {
             experiences that lets anyone create, share, find and attend events.
           </p>
           <div className="footer-social">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span><FaFacebook/></span>
+            <span><CgMail/></span>
+            <span><FaGithub /></span>
           </div>
         </div>
 
