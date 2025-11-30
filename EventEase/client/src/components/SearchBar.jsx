@@ -17,19 +17,31 @@ const SearchBar = () => {
   const months = [...new Set(mockEvents.map((e) => e.month))];
   const types = [...new Set(mockEvents.map((e) => e.eventType))];
   const handleSearch = () => {
-    // ⭐ PARTIAL TITLE MATCH (case-insensitive)
-    if (filters.title.trim()) {
-      const match = mockEvents.find((e) =>
-        e.title.toLowerCase().includes(filters.title.toLowerCase().trim())
-      );
+    // Clean search values
+    const title = filters.title.toLowerCase().trim();
+    const month = filters.month.toLowerCase().trim();
+    const type = filters.type.toLowerCase().trim();
 
-      if (match) {
-        navigate(`/events/${match.id}`);
-        return;
-      }
+    // ⭐ FULL MATCH CHECK (title + month + type)
+    const match = mockEvents.find((e) => {
+      const eTitle = e.title.toLowerCase();
+      const eMonth = e.month.toLowerCase();
+      const eType = e.eventType.toLowerCase();
+
+      const titleMatch = title ? eTitle.includes(title) : true;
+      const monthMatch = month ? eMonth.includes(month) : true;
+      const typeMatch = type ? eType.includes(type) : true;
+
+      // all must match
+      return titleMatch && monthMatch && typeMatch;
+    });
+
+    if (match) {
+      navigate(`/events/${match.id}`);
+      return;
     }
 
-    // ⭐ Otherwise → Go to search results with filters
+    // ⭐ If no direct match → go to results page
     const q = new URLSearchParams(filters).toString();
     navigate(`/search-results?${q}`);
   };
