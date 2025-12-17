@@ -1,18 +1,19 @@
-import React from "react";
+
+            
+            import React from "react";
 import { useAppContext } from "../context/useAppContext";
 import "./AllEvents.css";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 const AllEvents = () => {
-  const { mockEvents } = useAppContext();
+  const { events } = useAppContext();
 
   return (
     <div className="all-events-page">
       {/* ⭐ NAVBAR */}
       <div className="home-hero-wrapper-all-events">
         <Navbar />
-       
       </div>
 
       {/* ⭐ ALL EVENTS GRID */}
@@ -20,9 +21,9 @@ const AllEvents = () => {
         <h1>All Events 🎉</h1>
 
         <div className="events-grid">
-          {mockEvents.map((event) => (
+          {events.map((event) => (
             <Link
-              to={`/events/${event.id}`}
+              to={`/events/${event._id}`}
               key={event.id}
               className="event-card"
             >
@@ -51,3 +52,7 @@ const AllEvents = () => {
 };
 
 export default AllEvents;
+
+            
+           
+            

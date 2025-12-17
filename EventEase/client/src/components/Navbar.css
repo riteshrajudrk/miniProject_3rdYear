@@ -1,20 +1,4 @@
-/* src/components/Navbar.css */
-
-.navbar-organize-btn {
-  background: #ffffff;
-  border-radius: 999px;
-  border: none;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--primary-magenta);
-  cursor: pointer;
-  margin-right: 0.6rem;
-}
-
-.navbar-organize-btn:hover {
-  opacity: 0.9;
-}
+/* ================= NAVBAR BASE ================= */
 
 .navbar {
   padding: 1.25rem 1.5rem 0.75rem;
@@ -35,7 +19,8 @@
   justify-content: space-between;
 }
 
-/* logo */
+/* ================= LOGO ================= */
+
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -53,22 +38,24 @@
   color: var(--accent-yellow);
 }
 
-/* links (desktop default) */
+/* ================= LINKS ================= */
+
 .navbar-links {
   display: flex;
   gap: 1.5rem;
-  font-size: 0.95rem;
   align-items: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
-.navbar-link {
+.navbar-links a {
   color: #f9fafb;
   text-decoration: none;
   position: relative;
 }
 
-/* underline effect */
-.navbar-link::after {
+/* underline */
+.navbar-links a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -79,17 +66,36 @@
   transition: width 0.2s ease-out;
 }
 
-.navbar-link:hover::after,
-.navbar-link--active::after {
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
   width: 100%;
 }
 
-/* actions */
-.navbar-actions {
+/* ================= RIGHT ACTIONS ================= */
+
+.navbar-right {
   display: flex;
   align-items: center;
 }
 
+/* Organize button */
+.navbar-organize-btn {
+  background: #ffffff;
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-magenta);
+  cursor: pointer;
+  margin-right: 0.6rem;
+}
+
+.navbar-organize-btn:hover {
+  opacity: 0.9;
+}
+
+/* Login button */
 .navbar-login-btn {
   background: #ffffff;
   border-radius: 999px;
@@ -105,12 +111,34 @@
   opacity: 0.9;
 }
 
-/* hide login-link styling */
-.navbar-login-link {
-  text-decoration: none;
+/* ================= PROFILE ================= */
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-/* Hamburger button (hidden on desktop) */
+.navbar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.navbar-logout-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ================= HAMBURGER ================= */
+
 .navbar-toggle {
   display: none;
   width: 42px;
@@ -134,7 +162,6 @@
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* animate into X */
 .navbar-toggle--open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -147,23 +174,17 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ============= MOBILE ============= */
-@media (max-width: 768px) {
-  .navbar-inner {
-    padding-inline: 1rem;
-  }
+/* ================= MOBILE ================= */
 
-  /* hide desktop login btn */
-  .navbar-actions {
+@media (max-width: 768px) {
+  .navbar-right {
     display: none;
   }
 
-  /* hamburger visible */
   .navbar-toggle {
     display: flex;
   }
 
-  /* nav becomes dropdown panel */
   .navbar-links {
     position: absolute;
     top: calc(100% + 0.6rem);
@@ -174,29 +195,14 @@
     background: rgba(15, 23, 42, 0.96);
     flex-direction: column;
     gap: 0.8rem;
-    display: none; /* closed by default */
+    display: none;
   }
 
   .navbar-links--open {
     display: flex;
   }
 
-  .navbar-link {
-    width: 100%;
-  }
-
-  .navbar-link::after {
-    height: 0; /* no underline in mobile; we use color instead */
-  }
-
-  .navbar-link--active {
-    font-weight: 600;
-    color: var(--accent-yellow);
-  }
-
-  /* login button inside dropdown */
-  .navbar-login-btn {
-    width: 100%;
-    justify-content: center;
+  .navbar-links a::after {
+    display: none;
   }
 }
