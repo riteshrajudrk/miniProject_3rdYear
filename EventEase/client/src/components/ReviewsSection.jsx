@@ -5,6 +5,9 @@ import { useAppContext } from "../context/useAppContext";
 
 const ReviewsSection = () => {
   const { reviews } = useAppContext();
+  const reviewsToShow = reviews.slice(0, 8);
+  // Show only first 8 reviews
+
   return (
     <section className="reviews">
       <h2 className="reviews-title">Reviews About Us</h2>
@@ -13,7 +16,7 @@ const ReviewsSection = () => {
       </p>
 
       <div className="reviews-grid">
-        {reviews.map((review) => (
+        {reviewsToShow.map((review) => (
           <article className="review-card" key={review.id}>
             <div className="review-header">
               <div className="review-avatar">T</div>

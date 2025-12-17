@@ -16,7 +16,16 @@ import CreateEvent from "./pages/CreateEvent";
 import OrganizerDashboard from "./pages/OrganizerDashboard";
 import AllEvents from "./pages/AllEvents";
 import { AppProvider } from "./context/useAppContext";
+import { Navigate } from "react-router-dom";
+import Profile from "./pages/Profile";
+import { useAppContext } from "./context/useAppContext";
+import "react-toastify/dist/ReactToastify.css";
 const App = () => {
+  const PrivateRoute = ({ children }) => {
+    const { user, loading } = useAppContext();
+    if (loading) return null;
+    return user ? children : <Navigate to="/login" />;
+  };
   return (
     <Router>
       <AppProvider>
@@ -27,6 +36,14 @@ const App = () => {
           <Route path="/events/:id" element={<EventDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+          />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<Privacy />} />

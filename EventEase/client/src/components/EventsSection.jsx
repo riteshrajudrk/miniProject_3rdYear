@@ -5,8 +5,7 @@ import { useAppContext } from "../context/useAppContext";
 import { Link } from "react-router-dom";
 
 const EventsSection = ({ title, variant }) => {
-
-  const { mockEvents , navigate} = useAppContext();
+  const { events, navigate } = useAppContext();
   const [activeTab, setActiveTab] = useState("latest");
 
   // ⭐ Today’s date
@@ -15,18 +14,18 @@ const EventsSection = ({ title, variant }) => {
   // ⭐ Step 1: Filter by variant (upcoming / past)
   const filterByVariant = () => {
     if (variant === "upcoming") {
-      return mockEvents.filter(
+      return events.filter(
         (e) => new Date(e.createdAt) > today // future events
       );
     }
 
     if (variant === "past") {
-      return mockEvents.filter(
+      return events.filter(
         (e) => new Date(e.createdAt) < today // old events
       );
     }
 
-    return mockEvents;
+    return events;
   };
 
   // Base filtered list
@@ -90,9 +89,9 @@ const EventsSection = ({ title, variant }) => {
         ) : (
           filteredEvents.map((event) => (
             <article
-              onClick={() => navigate(`/events/${event.id}`)}
+              onClick={() => navigate(`/events/${event._id}`)}
               className="event-card"
-              key={event.id}
+              key={event._id}
             >
               <div
                 className="event-image"
