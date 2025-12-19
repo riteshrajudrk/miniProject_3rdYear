@@ -14,37 +14,6 @@ const SearchBar = () => {
     type: "",
   });
 
-<<<<<<< HEAD
-  // Extract dynamic values
-  const months = [...new Set(mockEvents.map((e) => e.month))];
-  const types = [...new Set(mockEvents.map((e) => e.eventType))];
- const handleSearch = () => {
-    // Clean search values
-    const title = filters.title.toLowerCase().trim();
-    const month = filters.month.toLowerCase().trim();
-    const type = filters.type.toLowerCase().trim();
-
-    // ⭐ FULL MATCH CHECK (title + month + type)
-    const match = mockEvents.find((e) => {
-      const eTitle = e.title.toLowerCase();
-      const eMonth = e.month.toLowerCase();
-      const eType = e.eventType.toLowerCase();
-
-      const titleMatch = title ? eTitle.includes(title) : true;
-      const monthMatch = month ? eMonth.includes(month) : true;
-      const typeMatch = type ? eType.includes(type) : true;
-
-      // all must match
-      return titleMatch && monthMatch && typeMatch;
-    });
-
-    if (match) {
-      navigate(`/events/${match.id}`);
-      return;
-    }
-
-    // ⭐ If no direct match → go to results page
-=======
   // ⛔ Prevent crash while events are loading
   if (loading || !events || events.length === 0) {
     return null;
@@ -76,7 +45,6 @@ const SearchBar = () => {
       return;
     }
 
->>>>>>> RimjhimDev
     const q = new URLSearchParams(filters).toString();
     navigate(`/search-results?${q}`);
   };
